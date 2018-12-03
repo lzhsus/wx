@@ -1,0 +1,54 @@
+/* pages/login/login.wxss */
+.ad{
+  width: 100%;
+  height: 368rpx;
+  margin-bottom: 100rpx;
+  position: relative
+}
+.ad>image{
+  width: 100%;
+  height: 100%;
+}
+.ad text{
+  font-size: 62rpx;
+  color: rgba(207, 136, 86,0.5);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%)
+}
+.login{
+  width: 90%;
+  margin:60rpx auto
+}
+.login>button{
+  font-size: 38rpx;
+  border-radius: 20rpx;
+  background-color:rgba(0, 0, 0, 0);
+}
+.wx>button{
+  border: 1rpx solid #89DD4D;
+  color: #89DD4D;
+}
+.ph>button{
+    border: 1rpx solid #1296db;
+  color: #1296db;
+}
+.agreement{
+   width: 90%;
+   margin:60rpx auto;
+   border-top:1px solid #ccc;
+   text-align: center;
+   padding-top: 20rpx;
+   position: fixed;
+   bottom: 60rpx;
+   left: 5%;
+}
+.agreement text:nth-of-type(1){
+  font-size: 24rpx;
+  color: #999;
+}
+.agreement text:nth-of-type(2){
+  font-size: 24rpx;
+  color: rgb(145, 227, 233);
+}

@@ -1,0 +1,67 @@
+<!-- 筛选按钮 -->
+<view class='filtrate'>
+  <view bindtap='comprehensiveBtn' id='1'>
+    <text class='filtrate-tit'>综合</text>
+    <view class='arrows'>
+      <image class='img1' wx:if="{{comprehensiveIs}}" src='../../public/icon/arrows.png'></image>
+    </view>
+    <view class='comprehensive' wx:if="{{!comprehensiveIs}}">
+      <view class='active'>综合排序</view>
+      <view>销量优先</view>
+    </view>
+  </view>
+  <!-- 价格 -->
+  <view bindtap='comprehensiveBtn' id='2'>
+    <text class='filtrate-tit'>价格</text>
+    <view class='arrows arrows-marry'>
+      <image class='img1' wx:if="{{comprehensiveIs}}" src='../../public/icon/arrows.png'></image>
+      <image class='img2' wx:if="{{comprehensiveIs}}" src='../../public/icon/arrows.png'></image>
+    </view>
+    <view class='comprehensive' wx:if="{{!comprehensiveIs}}">
+      <view class='active'>综合排序</view>
+      <view>销量优先</view>
+    </view>
+  </view>
+  <!-- 商品 -->
+  <view bindtap='comprehensiveBtn' id='3'>
+    <text class='filtrate-tit'>商品</text>
+    <view class='arrows'>
+      <image class='img2' wx:if="{{comprehensiveIs}}" src='../../public/icon/arrows.png'></image>
+    </view>
+    <view class='comprehensive' wx:if="{{!comprehensiveIs}}">
+      <view class='active'>综合排序</view>
+      <view>销量优先</view>
+    </view>
+  </view>
+  <!-- 筛选 -->
+  <view bindtap='comprehensiveBtn' id='4'>
+    <text class='filtrate-tit'>筛选</text>
+    <view class='arrows'>
+      <image class='img2' wx:if="{{comprehensiveIs}}" src='../../public/icon/arrows.png'></image>
+    </view>
+    <view class='comprehensive' wx:if="{{!comprehensiveIs}}">
+      <view class='active'>综合排序</view>
+      <view>销量优先</view>
+    </view>
+  </view>
+</view>
+<!-- 商品 -->
+<view class='shopping'>
+  <view class='{{!item.notData?"filtrates":"notData"}}' wx:for="{{filtrates}}" data-goodsId="{{item.id}}">
+    <view class='filtrates-img'  wx:if="{{!item.notData}}">
+      <image src='{{item.imgUrl}}' data-goodsId="{{item.id}}" bindtap='productsMsg'></image>
+    </view>
+    <view class='filtrates-content'  wx:if="{{!item.notData}}">
+      <view class='filtrates-tit' data-goodsId="{{item.id}}" bindtap='productsMsg'>
+        <text>{{item.name}}</text>
+      </view>
+      <view class='filtrates-marry'>
+        <text class='filtrates-marry-new'>￥{{item.price}}</text>
+        <text class='filtrates-marry-old'>￥{{item.privilegePrice}}</text>
+        <text class='filtratesAdd' bindtap='filtrateAdd'>+</text>
+      </view>
+    </view>
+        <!-- 数据加载全部 -->
+    <view wx:if="{{item.notData}}">{{item.notData}}</view>
+  </view>
+</view>

@@ -1,0 +1,26 @@
+<!--pages/takeAddress/takeAddress.wxml-->
+<view>
+  <view wx:for="{{arr}}" class='takeaddress' wx:key="{{index}}">
+    <view>
+      <icon data-index="{{index}}" type="{{!item.sel?'success':'circle'}}" size="20" bindtap="bindCheckbox"/>
+    </view>
+    <view class='addMag'>
+      <view>
+        <text>{{item.userName}}</text>
+        <text>{{item.telNumber}}</text>
+      </view>
+      <view class='address'>
+        <text>{{item.address}}</text>
+      </view>
+    </view>
+    <view class='change'>
+      <image src='/public/icon/change.png'></image>
+    </view>
+  </view>
+  <view wx:if="{{arr.length==0}}" class='text'>
+    暂无收货地址
+  </view>
+  <view class='addAddress' bindtap='addAddress'>
+    <text>+新增地址</text>
+  </view>
+</view>

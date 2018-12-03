@@ -1,0 +1,163 @@
+/* pages/main/main.wxss */
+.onPullDownRefresh{
+  height: 100rpx;
+  /* background-color: red; */
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 0 47%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+}
+.onPullDownRefresh view.onactive{
+  background-color: red;
+}
+.onPullDownRefresh view{
+  width: 10rpx;
+  height: 10rpx;
+  border-radius: 50rpx;
+  background-color: rgb(114, 111, 111);
+
+}
+.filtrate{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: relative;
+  padding-bottom: 20rpx;
+  border-bottom: 1px solid #ccc;
+  background-color: #fff;
+}
+.filtrate>view{
+  width: 25%;
+  text-align: center;
+}
+.filtrate>view::after{
+  content: '';
+  display: block;
+  clear: both;
+}
+.filtrate-tit{
+  margin-left: 50rpx;
+  float: left;
+}
+.arrows{
+  float: left;
+  margin-left: 10rpx;
+  
+}
+.arrows-marry{
+  position: relative;
+}
+.arrows-marry> .img1{
+  position: absolute;
+  top: 10rpx;
+}
+.arrows-marry> .img2{
+  position: absolute;
+  top: 30rpx;
+}
+.arrows>.img1{
+  transform: rotate(180deg);
+  width: 20rpx;
+  height: 20rpx;
+}
+.arrows>.img2{
+
+  width: 20rpx;
+  height: 20rpx;
+}
+.comprehensive{
+  background-color: #fff;
+  position: absolute;
+  top: 60rpx;
+  left: 0;
+  width: 100%;
+}
+.comprehensive>view{
+  border-bottom: 1px solid #ccc;
+  padding: 20rpx 50rpx;
+  text-align: left;
+}
+.comprehensive>view.active{
+  color: #017FC9;
+}
+.shopping{
+  width: 100%;
+  box-sizing: border-box;
+}
+.filtrates{
+  padding-top: 20rpx;
+  width: 29%;
+  margin: 0 2%;
+  float: left;
+  
+}
+.filtrates-img{
+  box-sizing: border-box;
+  padding: 20rpx;
+  width:100%;
+  height: 180rpx;
+  border: 1px solid rgb(206, 205, 205);
+}
+.filtrates-img image{
+  width: 100%;
+  height: 100%;
+}
+.filtrates-content{
+  width: 100%;
+  text-align: left;
+  position: relative;
+
+}
+.filtrates-tit{
+  font-size: 28rpx;
+  color: rgb(117, 114, 114);
+  height: 70rpx;
+  margin: 10rpx 0;
+    display: block;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  line-clamp: 2;
+}
+.filtrates-marry{
+  margin-top: 10rpx;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  height: 60rpx;
+  /* background-color: #ccc; */
+  line-height: 30rpx;
+}
+.filtrates-marry-new{
+  display: block;
+  color: rgb(34, 32, 31);
+  font-size: 30rpx;
+}
+.filtrates-marry-old{
+  color: #ccc;
+  font-size: 24rpx;
+  text-decoration: line-through;
+}
+.filtratesAdd{
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding:0 6rpx;
+  font-size: 24rpx;
+  color: #fff;
+  border-radius: 50%;
+  background-color: rgb(255, 72, 0);
+}
+/* 数据加载完 */
+.notData{
+  width: 100%;
+  margin: auto;
+  text-align: center;
+  padding:20rpx;
+  float: left;
+  color: #ccc;
+}

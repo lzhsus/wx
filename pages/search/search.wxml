@@ -1,0 +1,16 @@
+<!-- 筛选按钮 -->
+<view class='search'>
+  <image class='img' src='/public/icon/search-active-wider.png'></image>
+  <input class='input' bindblur='inputblur' type='text' placeholder='搜索您想要的商品'></input>
+  <navigator url='../index/index' open-type="switchTab">
+    <text bindtap='clearvalue'>取消</text>
+  </navigator>
+</view>
+<view class='searchNew'>
+  <image class='img' src='/public/icon/search-new.png'></image>
+  <text>最近搜索</text>
+  <image class='img' bindtap='delbtn' src='/public/icon/remove.png'></image>
+</view>
+<view wx:for="{{searchs}}" wx:key="{{index}}" class='search-input-body'>
+  <text>{{item}}</text>
+</view>

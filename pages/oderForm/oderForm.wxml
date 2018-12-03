@@ -1,0 +1,11 @@
+<!--pages/oderForm/oderForm.wxml-->
+<view class='oder'>
+  <view class='{{sel?"oderform active":"oderform"}}' data-title='oderform' bindtap='oderform'>到家订单</view>
+  <view class='{{!sel?"oderform active":"oderform"}}' data-title='oderCode' bindtap='oderCode'>扫码订单</view>
+</view>
+<view wx:if="{{sel}}">
+    到家
+</view>
+<view wx:else>
+    扫码
+</view>

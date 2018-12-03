@@ -1,0 +1,156 @@
+/* pages/main/main.wxss */
+.content{
+  background-color: #F0F0F0;
+}
+.main-user{
+  background-color: rgb(161, 206, 250);
+  width: 100%;
+  height: 260rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 50rpx;
+  box-sizing: border-box;
+}
+.main-user .img1{
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 40rpx;
+}
+.main-user .img2{
+  width: 80rpx;
+  height: 80rpx;
+ 
+}
+.main-user>view:nth-of-type(1){
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 40rpx;
+  background-color: rgb(250, 244, 244);
+}
+.main-user>view:nth-of-type(2){
+  color: #fff;
+  font-size: 32rpx;
+  margin-left: 20rpx;
+  width: 100%;
+  text-align: left;
+}
+.main-card{
+  background-color: #fff;
+  width: 100%;
+  height: 280rpx;
+  margin-bottom: 20rpx;
+  position: relative;
+}
+.main-more{
+    background-color: rgb(255, 255, 255);
+  width: 100%;
+  height: 400rpx;
+}
+.main-card-top{
+  width: 90%;
+  position: absolute;
+  height: 180rpx;
+  background-color: #fff;
+  border-radius: 20rpx;
+  top: -40rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 4rpx 4rpx 4rpx rgb(219, 210, 210);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.member{
+  color: #fff;
+  font-size: 24rpx;
+}
+.coupon-fa{
+  color: rgb(162, 227, 247);
+  font-size: 30rpx;
+  height: 50rpx;
+  margin-bottom: 20rpx;
+}
+.num{
+  font-size: 24rpx;
+  color: #000;
+}
+.coupon-fa::after{
+  content: "";
+  display: block;
+  clear: both
+}
+.coupon{
+  width: 40rpx;
+  height: 40rpx;
+  float: left;
+  margin-left: 80rpx;
+}
+.main-card-top-left{
+  width: 46%;
+  text-align: center;
+  border-right: 1rpx solid #F0F0F0;
+}
+.main-card-top-right{
+  width: 46%;
+  text-align: center
+}
+.main-card-top-right text{
+  color: #b7e44e;
+}
+/* ecp */
+.main-card-ecp{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 150rpx;
+  text-align: center;
+}
+.main-card-ecp>view{
+  width: 100%;
+}
+.main-card-ecp>view:nth-of-type(2){
+  border-left: 1rpx solid #ccc;
+   border-right: 1rpx solid #ccc;
+}
+.main-card-ecp>view>view:nth-of-type(1){
+    font-size: 28rpx;
+color: #1296db;
+margin-bottom: 22rpx;
+margin-top: 10rpx;
+}
+.main-card-ecp>view>view:nth-of-type(2){
+  font-size: 28rpx;
+}
+/* 更多功能 */
+.main-more-model{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding:30rpx 0;
+  margin: 0 40rpx;
+  border-bottom: 1rpx solid rgb(233, 223, 223);
+  overflow: hidden;
+}
+.main-more-model .img{
+  width: 50rpx;
+  height: 50rpx;
+}
+.main-more-model .img image{
+  width: 100%;
+  height: 100%;
+}
+.main-more-model-tit{
+  display: block;
+  width: 100%;
+  text-align: left;
+  font-size: 30rpx;
+  color: rgb(0, 0, 0);
+  letter-spacing: 2rpx;
+  margin-left: 40rpx;
+}
+.new-model-phone{
+ margin-left: 60rpx;
+ font-size: 26rpx;
+  color: rgb(170, 169, 169);
+}

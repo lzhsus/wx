@@ -1,0 +1,17 @@
+<!--pages/login/login.wxml-->
+<view>
+  <view class='ad'>
+    <image src='../../public/images/login.jpg'></image>
+    <text>i美妆小程序</text>
+  </view>
+  <view class='login wx'>
+    <button open-type='getUserInfo' bindtap='onGetUserInfo' bindgetuserinfo="getuserinfo">微信登录</button>
+  </view>
+  <view class='login ph'>
+    <button>手机号登陆</button>
+  </view>
+  <view class='agreement'>
+    <text>注册即视为同意</text>
+    <text>《i美妆会员注册协议》</text>
+  </view>
+</view>

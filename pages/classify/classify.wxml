@@ -1,0 +1,43 @@
+<view class='header-top'>
+  <navigator url="../address/address" open-type="navigate" hover-class="none">
+    <view class='address' open-type="getUserInfo">
+      <image class='address-index' src='../../public/icon/address-classify.png'></image>
+      <text class='address-txt'>{{address}}</text>
+    </view>
+  </navigator>
+  <navigator url="../search/search" open-type="navigate" hover-class="none">
+    <view class='search'>
+      <input class='search-input' type='text' placeholder='搜索您想要的商品'></input>
+    </view>
+  </navigator>
+</view>
+<view class='classify-shop'>
+  <view class='classify-sort'>
+    <scroll-view scroll-y="true" style='height:{{windowHeight+"rpx"}}' data-a='{{windowHeight}}'>
+      <view wx:for="{{classifysort}}" wx:for-item='item1' wx:key="{{index}}" data-id="{{item1.id}}">
+        <!-- 分类 -->
+        <text class='classify-sort-name'bindtap='classifyShopChange' data-ishaveChild="{{item1.ishaveChild}}" data-id="{{item1.id}}">{{item1.name}}</text>
+        <!-- 分类--详细 -->
+        <view bindtap='classifyShopChangeList' class='{{isSelect==item.id?"classify-sort-left active":"classify-sort-left"}}' wx:for="{{item1.shopClassifyDtoList}}" data-id="{{item.id}}" wx:if='{{item1.ishaveChild}}'>{{item.name}}</view>
+      </view>
+    </scroll-view>
+  </view>
+
+  <view class='classify-content'>
+    <scroll-view scroll-y="true" style='height:{{windowHeight+"rpx"}}'>
+      <view class='classify-content-body' wx:for="{{classifyList}}" wx:key="{{index}}" data-id="{{item.id}}">
+        <view class='classify-content-img' data-goodsId="{{item.id}}" bindtap='productsMsg'>
+          <text>满减</text>
+          <image src='{{item.imgUrl}}'></image>
+        </view>
+        <view class='classify-content-tit-msg'>
+          <view class='classify-content-tit'  data-goodsId="{{item.id}}" bindtap='productsMsg'>{{item.name}}</view>
+          <view class='classify-content-msg'>
+            <text>￥{{item.price}}</text>
+            <text  data-goodsId="{{item.id}}" data-name="{{item.name}}" bindtap='promptAdd'>+</text>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+</view>

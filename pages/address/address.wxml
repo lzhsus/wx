@@ -1,0 +1,23 @@
+<!--pages/address/address.wxml-->
+<view class='content'>
+  <view class='search'>
+    <image class='search-active' src='../../public/icon/search-active.png'></image>
+    <input class='search-txt' type='text' placeholder='请输入收货地址，如小区，写字楼名'></input>
+  </view>
+  <view class='newaddress'>
+    <view class='model'>
+        <view class='now'>
+          <image wx:if="{{current}}" class='current' src='../../public/icon/current.png'></image>
+          <image wx:if="{{!current}}" class='current' src='../../public/icon/new-current.png'></image>
+          <text class='textnew'>当前定位</text>
+        </view>
+        <view class='new' bindtap='changeAddress'>
+          <image animation="{{animationData}}" class='current' src='../../public/icon/newchange.png'></image>
+          <text class='textnew textcolor'>重新定位</text>
+        </view>
+    </view>
+    <view class='modeladdress' wx:for="{{indexaddress}}" id='{{index+1}}' wx:key="{{index}}">
+       {{item.address}}
+    </view>
+  </view>
+</view>

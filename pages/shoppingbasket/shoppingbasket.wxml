@@ -1,0 +1,52 @@
+<view class='empty' wx:if="{{shops.length==0}}">
+  <view>
+    <image class='empty_img' src='/public/icon/empty.png'></image>
+  </view>
+  <view class='empty_tit'>
+    <text>顾客您比我想象的要穷哦</text>
+  </view>
+  <navigator url='../index/index' open-type='switchTab' hover-class='none'>
+    <view class='empty_btn'>买点东西吧</view>
+  </navigator>
+</view>
+<view wx:else>
+  <view class='shop_adr'>
+    <view></view>
+    <text> {{address}}</text>
+  </view>
+  <checkbox-group bindchange="gropChangeShop">
+    <view wx:for="{{shops}}" wx:key="{{index}}" class='shop' data-id="{{item.id}}" data-index="{{index}}"  catchtap="catchTapCategory">
+      <view>
+        <checkbox value="shop{{index}}" data-id="{{item.id}}" data-index="{{index}}" bindtap='checkboxBtn' checked="{{item.checked}}"></checkbox>
+      </view>
+      <view class='shop_img'>
+        <image src='{{item.imgUrl}}'></image>
+      </view>
+      <view class='shop_content'>
+        <view class='shop_tit'>{{item.name}}</view>
+        <view>￥{{item.price}}</view>
+      </view>
+      <view class='addreove'>
+        <view bindtap="reduceShop" data-id="{{item.id}}" data-index="{{index}}" data-value='{{item.isNew}}'>-</view>
+        <view>
+          <input bindblur='shopchange' type="number" data-index="{{index}}" data-id="{{item.id}}" value='{{item.isNew}}' data-value='{{item.isNew}}'></input>
+        </view>
+        <view bindtap='addShop' data-id="{{item.id}}" data-index="{{index}}" data-value='{{item.isNew}}'>+</view>
+      </view>
+    </view>
+  </checkbox-group>
+  <view class='pbottom'></view>
+  <!-- 金额计算 -->
+  <view>
+    <checkbox-group>
+      <view class='close'>
+        <view class='close_all'>
+          <checkbox value="shopall" bindtap='gropshop' checked="{{checked}}"></checkbox>
+          <text>全选</text>
+        </view>
+        <view class='close_btn'>选择OK</view>
+        <view class='close_money'>合计:￥{{priceNum}}</view>
+      </view>
+    </checkbox-group>
+  </view>
+</view>

@@ -1,0 +1,16 @@
+/* pages/oderForm/oderForm.wxss */
+.oder{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+}
+.oderform{
+  width: 100%;
+  float: left;
+  padding: 20rpx 0;
+}
+.active{
+  color: rgb(51, 172, 228);
+  border-bottom: 2rpx solid rgb(51, 172, 228);
+}

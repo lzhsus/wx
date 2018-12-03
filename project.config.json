@@ -1,0 +1,110 @@
+{
+	"description": "项目配置文件",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": true,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"autoAudits": false
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.4.0",
+	"appid": "wx663dd664cc8a14e1",
+	"projectname": "%E7%99%BE%E8%81%94%E5%88%B0%E5%AE%B6",
+	"debugOptions": {
+		"hidedInDevtools": []
+	},
+	"isGameTourist": false,
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 10,
+			"list": [
+				{
+					"id": 0,
+					"name": "address",
+					"pathName": "pages/address/address",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "promptMore",
+					"pathName": "pages/promptMore/promptMore",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "fruits",
+					"pathName": "pages/fruits/fruits",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "search",
+					"pathName": "pages/search/search",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "cameraphone",
+					"pathName": "pages/cameraphone/cameraphone",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "shoppingbasket",
+					"pathName": "pages/shoppingbasket/shoppingbasket",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "classify",
+					"pathName": "pages/classify/classify",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "main",
+					"pathName": "pages/main/main",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "products",
+					"pathName": "pages/products/products",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "oderForm",
+					"pathName": "pages/oderForm/oderForm",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "takeAddress",
+					"pathName": "pages/takeAddress/takeAddress"
+				}
+			]
+		}
+	}
+}

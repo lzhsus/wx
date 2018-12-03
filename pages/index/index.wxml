@@ -1,0 +1,280 @@
+<!--index.wxml-->
+<view class='content'>
+  <view class='scanCode'>
+    {{text}}
+  </view>
+  <!-- 顶部地址 搜索框 -->
+  <view class='header-top'>
+    <navigator url="../address/address" open-type="navigate" hover-class="none">
+      <view class='address' open-type="getUserInfo">
+        <image class='address-index' src='../../public/icon/address-index.png'></image>
+        <text class='address-txt'>{{address}}</text>
+      </view>
+    </navigator>
+    <navigator url="../search/search" open-type="navigate" hover-class="none">
+      <view class='search'>
+        <image class='search-img' src='../../public/icon/search.png'></image>
+        <input class='search-input' type='text' placeholder='搜索您想要搜索的内容'></input>
+      </view>
+    </navigator>
+    <!-- <navigator url="../cameraphone/cameraphone" open-type="navigate" hover-class="navigator-hover"> -->
+    <view class='evm' bindtap='carm'>
+      <image src='../../public/icon/evm.png'></image>
+    </view>
+    <!-- </navigator> -->
+  </view>
+  <!-- 轮播图 swiper -->
+  <view class='swiper'>
+    <swiper indicator-dots="true" circular="false" indicator-color="#fff" indicator-active-color="#017FC9" autoplay="false" interval="4000" duration="1000">
+      <block wx:for="{{items}}" wx:key="{{index}}">
+        <swiper-item>
+          <image src="{{item.imgUrl}}" name="{{item.bannerName}}" data-goodsId="{{item.id}}" bindtap='productsMsg'class="slide-image" width="355" height="150" />
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <!-- 分类 商品 -->
+  <scroll-view scroll-x="true" scrooll-left="60px" bindscroll="scrollLeft">
+    <view class='classify-Item'>
+      <view class=''>
+        <view wx:for="{{moreItem}}" wx:key="{{index}}" class='more-border'>
+          <image class='more-item' src='{{item.img}}'></image>
+          <!-- <text class='more-tit'>{{item.tit}}</text> -->
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+  <!-- 分类 商品 圆圈 -->
+  <!-- <view class='yd'>
+  <view class='active'></view>
+  <view></view>
+</view> -->
+  <!-- 广告部分 -->
+  <view class='ad'>
+    <image src='http://h2.appsimg.com/b.appsimg.com/upload/mst/2018/11/28/45/split_0e00bd5e89824cf4c06e3ae8e7395af46.jpg'></image>
+  </view>
+  <!-- 优惠 -->
+  <view class='tweet'>
+    <view class='tweetimg'>
+      <image src='../../public/icon/tit.png'></image>
+    </view>
+    <view class='tweettit'>
+      <text>i Makeup | </text>
+      <text>订单满88元免首运费，下单最快1小时达</text>
+    </view>
+    <view class='tweetimg'>
+      <image src='../../public/icon/shoppingchr.png'></image>
+    </view>
+  </view>
+  <!-- 限时特惠 -->
+  <view class='model-title'>
+    <view class='line'></view>
+    <text>天天抢</text>
+    <!-- 倒计时 -->
+    <view class='time'>{{time}}</view>
+  </view>
+  <!-- 限时特惠--商品 -->
+  <view class='prompt'>
+    <view class='promptGoods' wx:for="{{prompts}}" wx:if="{{index<3}}" wx:key="{{index}}" data-goodsId="{{item.id}}" data-name="{{item.name}}" catchtap="catchTapCategory">
+      <view class='good-img'  data-goodsId="{{item.id}}" bindtap='productsMsg'>
+        <image src='{{item.imgUrl}}'></image>
+      </view>
+      <view class='good-content'>
+      <!-- 通过名称 点击 获取信息的详细 -->
+        <text class='good-tit' data-goodsId="{{item.id}}" bindtap='productsMsg'>{{item.name}}</text>
+        <view class='good-marry'>
+          <text class='good-marry-new'>￥{{item.price}}</text>
+          <text class='good-marry-old'>￥{{item.privilegePrice}}</text>
+          <text class='promptAdd' data-goodsId="{{item.id}}" data-name="{{item.name}}" bindtap='promptAdd'>+</text>
+        </view>
+      </view>
+    </view>
+    <!-- 查看更多特惠商品 -->
+    <navigator url="../fruits/fruits" open-type="navigate" hover-class="none">
+      <view class='promptMore' bindtap='promptMore'>
+        <text decode='nbsp'>--&nbsp;查看更多&nbsp;--</text>
+      </view>
+    </navigator>
+  </view>
+  <!-- 广告部分 -->
+  <view class='ad'>
+    <image src='http://img62.ddimg.cn/2018/11/29/2018112918320614198.jpg'></image>
+  </view>
+  <!-- 优鲜惠 -->
+  <view class='model-title'>
+    <view class='line'></view>
+    <text>优鲜惠</text>
+    <!-- 倒计时 -->
+    <!-- <view class='time'>{{time}}</view> -->
+  </view>
+  <!-- 水果生鲜 -->
+  <view class='preferential'>
+    <scroll-view scroll-x="true" bindscroll="scrollLeft">
+      <view class='shopping shopping_H'>
+        <view class='filtrates' wx:for="{{preferentials}}" wx:key="{{index}}" data-goodsId="{{item.id}}" data-name="{{item.name}}" catchtap="catchTapCategory">
+          <view wx:if="{{index<(preferentials.length-1)}}">
+            <view class='filtrates-img'>
+              <image src='{{item.imgUrl}}'></image>
+            </view>
+            <view class='filtrates-content'>
+            <!-- 获取商品的详细信息 -->
+              <view class='filtrates-tit'  data-goodsId="{{item.id}}" bindtap='productsMsg'>
+                <text>{{item.name}}</text>
+              </view>
+              <view class='filtrates-marry'>
+                <text class='filtrates-marry-new'>￥{{item.price}}</text>
+                <text class='filtrates-marry-old'>￥{{item.privilegePrice}}</text>
+                <text class='filtratesAdd' data-goodsId="{{item.id}}" data-name="{{item.name}}" bindtap='promptAdd'>+</text>
+              </view>
+            </view>
+          </view>
+          <view wx:else>
+            <navigator url="../fruits/fruits" open-type="navigate" hover-class="none">
+              <view class='preferentialMore'>
+                <text decode='nbsp'>{{item.more}}</text>
+              </view>
+            </navigator>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+  <!-- 更多模块 -->
+  <view class='model-content'>
+    <view>
+      <image src='../../public/images/model1.jpg'></image>
+      <text class='model-tit1'>TOP新品</text>
+      <text class='model-tit2'>在家看世界</text>
+    </view>
+    <view>
+      <image src='../../public/images/model2.jpg'></image>
+      <text class='model-tit1'>抢大牌</text>
+      <text class='model-tit2'>低至5折起</text>
+    </view>
+    <view>
+      <image src='http://img0.pclady.com.cn/pclady/try2011/1806/240-365-50k.jpg'></image>
+      <text class='model-tit1'>Try免费试用</text>
+      <text class='model-tit2'>体验完美生活</text>
+    </view>
+    <view>
+      <image src='../../public/images/model4.jpg'></image>
+      <text class='model-tit1'>爆款疯抢</text>
+      <text class='model-tit2'>品牌超值惠</text>
+    </view>
+  </view>
+  <!-- 更多模块--详细商品-->
+  <view class='model-shop'>
+    <view class='model-shop-top'>
+      <image src='http://imgad0.pconline.com.cn/ivy/image/20146/24/14035751425490.jpg?IVY_LEVEL_0?222455_143344'></image>
+    </view>
+    <view class='shopping model-shopping'>
+      <view class='filtrates' wx:for="{{modelShops1}}" wx:key="{{index}}" wx:if="{{index>=3 && index<9}}" data-goodsId="{{item.id}}" data-name="{{item.name}}" catchtap="catchTapCategory">
+        <view class='filtrates-img model-shop-img'  data-goodsId="{{item.id}}" bindtap='productsMsg'>
+          <image src='{{item.imgUrl}}'></image>
+        </view>
+        <view class='filtrates-content'>
+          <view class='filtrates-tit' data-goodsId="{{item.id}}" bindtap='productsMsg'>
+            <text>{{item.name}}</text>
+          </view>
+          <view class='filtrates-marry'>
+            <text class='filtrates-marry-new'>￥{{item.price}}</text>
+            <text class='filtrates-marry-old'>￥{{item.privilegePrice}}</text>
+            <text class='filtratesAdd' data-goodsId="{{item.id}}" data-name="{{item.name}}" bindtap='promptAdd'>+</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='model-shop'>
+    <view class='model-shop-top'>
+      <image src='http://img0.pclady.com.cn/pclady/try2011/1811/610-455-60.jpg'></image>
+    </view>
+    <view class='shopping model-shopping'>
+      <view class='filtrates' wx:for="{{modelShops1}}" wx:key="{{index}}" wx:if="{{index>=9 && index<15}}" data-goodsId="{{item.id}}" data-name="{{item.name}}" catchtap="catchTapCategory">
+        <view class='filtrates-img model-shop-img'  data-goodsId="{{item.id}}" bindtap='productsMsg'>
+          <image src='{{item.imgUrl}}'></image>
+        </view>
+        <view class='filtrates-content'>
+          <view class='filtrates-tit' data-goodsId="{{item.id}}" bindtap='productsMsg'>
+            <text>{{item.name}}</text>
+          </view>
+          <view class='filtrates-marry'>
+            <text class='filtrates-marry-new'>￥{{item.price}}</text>
+            <text class='filtrates-marry-old'>￥{{item.privilegePrice}}</text>
+            <text class='filtratesAdd' data-goodsId="{{item.id}}" data-name="{{item.name}}" bindtap='promptAdd'>+</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='model-shop'>
+    <view class='model-shop-top'>
+      <image src='https://img22.iblimg.com/market-2/images/activity/1031477741.jpg'></image>
+    </view>
+    <view class='shopping model-shopping'>
+      <view class='filtrates' wx:for="{{modelShops1}}" wx:key="{{index}}" wx:if="{{index>=15 && index<21}}" data-goodsId="{{item.id}}" data-name="{{item.name}}" catchtap="catchTapCategory">
+        <view class='filtrates-img model-shop-img'  data-goodsId="{{item.id}}" bindtap='productsMsg'>
+          <image src='{{item.imgUrl}}'></image>
+        </view>
+        <view class='filtrates-content'>
+          <view class='filtrates-tit' data-goodsId="{{item.id}}" bindtap='productsMsg'>
+            <text>{{item.name}}</text>
+          </view>
+          <view class='filtrates-marry'>
+            <text class='filtrates-marry-new'>￥{{item.price}}</text>
+            <text class='filtrates-marry-old'>￥{{item.privilegePrice}}</text>
+            <text class='filtratesAdd' data-goodsId="{{item.id}}" data-name="{{item.name}}" bindtap='promptAdd'>+</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='model-shop'>
+    <view class='model-shop-top'>
+      <image src='https://img23.iblimg.com/market-2/images/activity/1257172091.jpg'></image>
+    </view>
+    <view class='shopping model-shopping'>
+      <view class='filtrates' wx:for="{{modelShops1}}" wx:key="{{index}}" wx:if="{{index>=21 && index<27}}" data-goodsId="{{item.id}}" data-name="{{item.name}}" catchtap="catchTapCategory">
+        <view class='filtrates-img model-shop-img'  data-goodsId="{{item.id}}" bindtap='productsMsg'>
+          <image src='{{item.imgUrl}}'></image>
+        </view>
+        <view class='filtrates-content'>
+          <view class='filtrates-tit' data-goodsId="{{item.id}}" bindtap='productsMsg'>
+            <text>{{item.name}}</text>
+          </view>
+          <view class='filtrates-marry'>
+            <text class='filtrates-marry-new'>￥{{item.price}}</text>
+            <text class='filtrates-marry-old'>￥{{item.privilegePrice}}</text>
+            <text class='filtratesAdd' data-goodsId="{{item.id}}" data-name="{{item.name}}" bindtap='promptAdd'>+</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='model-shop'>
+    <view class='model-shop-top'>
+      <image src='https://img23.iblimg.com/market-2/images/activity/1524792866.jpg'></image>
+    </view>
+    <view class='shopping model-shopping'>
+      <view class='filtrates' wx:for="{{modelShops1}}" wx:key="{{index}}" wx:if="{{index>=27 && index<33}}" data-goodsId="{{item.id}}" data-name="{{item.name}}" catchtap="catchTapCategory">
+        <view class='filtrates-img model-shop-img'  data-goodsId="{{item.id}}" bindtap='productsMsg'>
+          <image src='{{item.imgUrl}}'></image>
+        </view>
+        <view class='filtrates-content'>
+          <view class='filtrates-tit' data-goodsId="{{item.id}}" bindtap='productsMsg'>
+            <text>{{item.name}}</text>
+          </view>
+          <view class='filtrates-marry'>
+            <text class='filtrates-marry-new'>￥{{item.price}}</text>
+            <text class='filtrates-marry-old'>￥{{item.privilegePrice}}</text>
+            <text class='filtratesAdd' data-goodsId="{{item.id}}" data-name="{{item.name}}" bindtap='promptAdd'>+</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 客观已经到底了 -->
+  <view class='index-bottom'>
+    <text decode='nbsp'>--&nbsp;客观已经到底了&nbsp;--</text>
+  </view>
+</view>

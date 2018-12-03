@@ -1,0 +1,33 @@
+<!--pages/products/products.wxml-->
+<view wx:for="{{arrMsg}}">
+  <view class='swiper'>
+    <swiper indicator-dots="false" circular="false" indicator-color="#fff" indicator-active-color="#017FC9" autoplay="false" interval="4000" duration="1000">
+      <block wx:for="{{item.shopGoodsImageList}}" wx:key="{{index}}">
+        <swiper-item>
+          <image src="{{item.imgUrl}}" class="slide-image" width="355" height="150" />
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <view class='moneyMsg'>
+    <view>{{item.name}}</view>
+    <view>
+      <image class='issue' src='../../public/icon/issue.png'></image> 参考价 ￥{{item.privilegePrice}}</view>
+    <view>￥{{item.price}}</view>
+  </view>
+  <view class='moneyMsg-name'>
+    <view class='activity' wx:if="{{true}}">
+      <text>满减</text>是否参加满减</view>
+    <view class='moneyMsg-store'>
+      <image class='store' src='../../public/icon/store.png'></image>店铺名称</view>
+  </view>
+  <!-- 购物车信息 加入购物车 -->
+  <view class='addShopMsg'>
+    <view>
+      <image src='../../public/icon/shop-red.png'></image>
+      <text>{{length}}</text>
+    </view>
+    <view>小计：￥{{priceNum}}</view>
+    <view bindtap='addShopMsg'>添加商品</view>
+  </view>
+</view>

@@ -1,0 +1,11 @@
+<!--pages/oderForm/oderForm.wxml-->
+<view class='card'>
+  <view class='{{sel?"mycard active":"mycard"}}' data-title='newcard' bindtap='newcard'>领劵中心</view>
+  <view class='{{!sel?"mycard active":"mycard"}}' data-title='mycard' bindtap='mycard'>我的优惠卷</view>
+</view>
+<view wx:if="{{sel}}">
+    领劵中心
+</view>
+<view wx:else>
+    我的优惠卷
+</view>

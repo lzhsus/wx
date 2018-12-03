@@ -1,0 +1,140 @@
+/* pages/shoppingbasket/shoppingbasket.wxss */
+.empty{
+  text-align: center;
+  margin-top: 100rpx;
+}
+.empty_img{
+  width: 160rpx;
+  height: 160rpx;
+}
+.empty_tit{
+  color: #000;
+  margin: 100rpx;
+}
+.empty_btn{
+  overflow: hidden;
+  padding: 20rpx 40rpx;
+  background-color: rgb(0, 119, 255);
+  border-radius: 40rpx;
+  display: inline;
+  color: #fff;
+}
+/* 门店地址 */
+.shop_adr{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding:40rpx 40rpx 0;
+  border-top: 1px solid #999;
+}
+.shop_adr>view{
+  width: 10rpx;
+  height: 60rpx;
+  background-color: rgb(144, 198, 243);
+  margin-right: 20rpx;
+}
+.shop_adr text{
+  display: block;
+  width: 100%;
+  text-align: left;
+}
+/* 商品 */
+.shop{
+  padding:40rpx;
+  border-bottom:1px solid #ccc;
+  line-height: 160rpx;
+  position: relative;
+}
+.shop>view{
+  float: left;
+}
+.shop::after{
+  clear: both;
+  display: block;
+  content: ""
+}
+.shop_content{
+  margin-top: 20rpx;
+  line-height: 60rpx;
+}
+.shop_img{
+  width: 140rpx;
+  height: 160rpx;
+  margin: 0 20rpx;
+}
+.shop_img image{
+  width: 100%;
+  height: 100%;
+}
+.shop_tit{
+  width: 400rpx;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #999;
+  font-size: 32rpx;
+}
+.addreove{
+  position: absolute;
+  bottom: 40rpx;
+  right: 40rpx;
+}
+.addreove view{
+  text-align: center;
+  line-height: 50rpx;
+  float: left;
+  width: 50rpx;
+  height: 50rpx;
+  border: 1px solid #ccc;
+}
+.addreove input{
+  display: block;
+  font-size: 24rpx;
+  height: 100%;
+  padding: 0;
+}
+/* 结算 */
+.close{
+  position: fixed;
+  width: 100%;
+  background-color: rgb(234, 247, 246);
+  left: 0;
+  bottom: 0;
+  height: 100rpx;
+}
+.close>view{
+    float: left;
+}
+.close::after{
+  content: "";
+  display: block;
+  clear: both;
+}
+.close_all{
+  line-height: 100rpx;
+  margin-left: 40rpx;
+  font-size: 40rpx;
+  color: rgb(77, 74, 74);
+}
+.close>.close_money{
+  float: right;
+    line-height: 100rpx;
+    margin-right: 20rpx;
+    font-weight: bold;
+}
+.close>.close_btn{
+  width: 200rpx;
+  background-color: #1296db;
+  height: 100%;
+  line-height: 100rpx;
+  font-size: 32rpx;
+  float: right;
+  color: #fff;
+  text-align: center;
+}
+.pbottom{
+  width: 100%;
+  height: 100rpx;
+  overflow: hidden;
+}

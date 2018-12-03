@@ -1,0 +1,83 @@
+/* pages/address/address.wxss */
+.content{
+  background-color: #eee;
+  height: 1000rpx;
+}
+.search{
+  position: relative;
+  padding: 20rpx 0;
+  box-sizing: border-box;
+}
+.search-active{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 50rpx;
+  width: 40rpx;
+  height: 40rpx;
+}
+.search-txt{
+  box-sizing: border-box;
+  font-size: 28rpx;
+  border-radius: 10rpx;
+  padding-left: 100rpx;
+  border: 1px solid #ccc;
+  width: 94%;
+  height: 60rpx;
+  margin: auto;
+  background-color: #fff;
+}
+.newaddress{
+  box-sizing: border-box;
+  background-color: #fff;
+  height: 100rpx;
+}
+.model{
+  margin: 0 40rpx;
+  padding: 30rpx 0;
+  border-bottom: 1rpx solid #ccc;
+}
+.model::after{
+  display: block;
+  clear: both;
+  content: ""
+}
+.now{
+  float: left;
+}
+.new{
+  float: right;
+}
+.current{
+  width: 36rpx;
+  height: 36rpx;
+  float: left;
+  margin-right: 20rpx;
+  /* background-color: red; */
+}
+.textnew{
+  font-size: 28rpx;
+    float: left;
+  display: block;
+  /* background-color: red; */
+  white-space:nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+}
+.textcolor{
+  color: #017FC9;
+}
+.modeladdress{
+  box-sizing: border-box;
+  background-color: #fff;
+  height: 80rpx;
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  line-height: 80rpx;
+  padding-left: 40rpx;
+  padding-right: 40rpx;
+  font-size: 32rpx;
+}

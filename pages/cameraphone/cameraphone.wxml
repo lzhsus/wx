@@ -1,0 +1,8 @@
+<!-- 筛选按钮 -->
+<view>
+    <camera device-position="back" flash="auto" mode="scanCode" bindscancode="scancode"
+     binderror="error" style="width: 100%; height: 1000rpx;"></camera>
+</view>
+<view>
+  {{text}}
+</view>
